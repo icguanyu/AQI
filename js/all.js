@@ -16,9 +16,6 @@ Vue.component('Result',{
     innerCollct: function(){
       this.$emit('click',this.target.SiteName)
     },
-    innerStatus: function(){
-      this.$emit('status',this.target.Status)
-    },
     status: function(status){
       if (status == '良好') return 'sta_0'   
       if (status == '普通') return 'sta_1'
