@@ -43,7 +43,7 @@ var app = new Vue({
   methods: {
     getData: function(){
       const vm = this
-      const apiUrl ='http://opendata2.epa.gov.tw/AQI.json'
+      const apiUrl ='https://opendata2.epa.gov.tw/AQI.json'
       $.get(apiUrl).then(response=>{
         response.forEach(item=>{
           item['star']=false //新增一個資料屬性提供加星號使用
