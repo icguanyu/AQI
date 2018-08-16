@@ -1,0 +1,166 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@mixin scrollbars($size, $foreground-color, $background-color) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background: $background-color;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    cursor: pointer;
+  }
+}
+@include scrollbars(6px, #1f6a80, transparent);
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url(https://www.complextilburg.nl/wp-content/uploads/2015/08/Apple40.2.jpg) fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: "Noto Sans TC", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+table{
+  width: 100%;
+  min-width: 600px;
+  outline: none;
+  letter-spacing: 1px;
+  text-align: center;
+  border-collapse:collapse;//摺疊邊框
+  th{
+    background: #2aafb6;
+    color: #fff;
+    height: 40px;
+    font-weight: normal;
+  }
+  tr{
+    height: 60px;
+  }
+  tr:nth-child(odd) {
+    background: rgba(255,255,255,0.5);
+  }
+  tr:nth-child(even) {
+    background: rgba(255,255,255,0.8);
+  }
+  td{
+    span{
+      text-align: center;
+      color: #fff;
+      padding: 3px 5px;
+      border-radius: 2px;
+    }
+  }
+}
+select{
+  outline: none;
+  margin: 20px 0;
+  width: 50%;
+  border-radius: 5px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  padding: 10px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.wrap{
+  margin: 0 auto;
+  width: 90%;  
+  p{
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
+.header{
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  border-bottom: 1px solid #fff;
+}
+.clearStar{
+  width: 80px;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 6px;
+  background: #ff3b3b;
+}
+.favorite{
+  padding-top: 20px;
+  overflow: auto;
+
+}
+.result{
+  padding-top: 20px;
+  overflow: auto;
+}
+footer{
+  padding: 30px 0;
+  text-align: center;
+  color: #fff;
+  a{
+    color: #fff;
+    letter-spacing: 1px;
+  }
+}
+.fas,.far{
+  cursor: pointer;
+  margin: 0px 3px;
+  color: #ffca1d
+}
+
+
+.sta_0{
+  span{
+    background: #62d162;//綠
+  }
+}
+.sta_1{
+  span{
+    background: #7eb9db;//藍
+  }
+}
+.sta_2{
+  span{
+    background: #f1d56c;//黃
+  }
+}
+.sta_3{
+  span{
+    background: #ffa636;//橘
+  }
+}
+.sta_4{
+  span{
+    background: #e90909;//紅
+  }
+}
+.sta_5{
+  span{
+    background: #8900c8;//紫
+  }
+}
+.sta_6{
+  span{
+    background: #888;//紫
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>各縣市空氣品質指標(AQI)</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+
+  <div class="wrap" id="app">
+    <div class="header">
+      <h1>各縣市空氣品質指標(AQI)</h1>
+      <select v-model="target">
+        <option>--請選擇縣市--</option>
+        <option v-for="city in myCity">{{city}}</option>
+      </select>
+      <div class="clearStar" @click="clearStar">清除收藏</div>
+    </div>
+    <div class="favorite">
+      <p>我的最愛：</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>地區</th>
+            <th>AQI 指數</th>
+            <th>PM2.5</th>
+            <th>狀態</th>
+            <th>時間</th>
+            <th>收藏</th>
+          </tr>
+          <tr v-if="!hasStar.length">
+            <td colspan="6" >尚未加入任何收藏</td>
+          </tr>
+          <tr is="Result" v-for="city in hasStar" :target="city" v-on:click="outerCollct"></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="result">
+      <p>查詢結果：</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>地區</th>
+            <th>AQI 指數</th>
+            <th>PM2.5</th>
+            <th>狀態</th>
+            <th>時間</th>
+            <th>收藏</th>
+          </tr>
+          <tr is="Result" v-for="city in filterCity" :target="city" v-on:click="outerCollct"></tr>
+          <!-- <Result v-for="city in filterCity" :target="city"></Result> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer>
+    資料來源：<a href="https://opendata.epa.gov.tw/Data/Contents/AQI/" target="_blank">行政院環境保護署。環境資源資料開放平臺</a>
+  </footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/all.js"></script>
+</body>
+
+</html>
